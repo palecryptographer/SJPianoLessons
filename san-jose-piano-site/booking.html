@@ -54,17 +54,22 @@
     </header>
 
     <main class="wrap">
-      <section class="card">
-        <h2 class="serif">Schedule a lesson</h2>
-        <p>
-          The existing Acuity scheduling flow is preserved here for direct
-          booking.
-        </p>
+      <section class="booking-shell">
+        <div class="booking-heading">
+          <div>
+            <div class="eyebrow">Choose a time</div>
+            <h2>Schedule a free evaluation.</h2>
+          </div>
+          <p>
+            The existing Acuity scheduling flow is preserved for direct booking.
+            Pick a convenient time, or send a question below if you would like
+            help first.
+          </p>
+        </div>
         <iframe
           class="schedule-frame"
           title="Schedule a piano lesson"
           src="https://app.acuityscheduling.com/schedule.php?owner=19275403"
-          loading="lazy"
         ></iframe>
         <script
           src="https://embed.acuityscheduling.com/js/embed.js"
@@ -72,7 +77,7 @@
         ></script>
       </section>
 
-      <section class="tinted rounded-section">
+      <section class="tinted booking-contact">
         <div class="wrap">
           <div class="section-title">
             <div class="eyebrow">Questions first?</div>
@@ -83,7 +88,7 @@
             </p>
           </div>
           <form
-            class="card form-grid"
+            class="card form-card form-grid"
             action="https://www.weebly.com/weebly/apps/formSubmit.php"
             method="post"
             enctype="multipart/form-data"

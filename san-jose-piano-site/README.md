@@ -9,6 +9,8 @@ This is a dependency-free static site. Each page keeps its semantic HTML in one 
 
 The gallery uses the small progressive-enhancement script in `assets/js/site.js`. Images are grouped under `assets/images/gallery/` and `assets/images/supporting/`. No build step or package installation is required.
 
+The visual system is intentionally shared across every route: `--max` and `--gutter` control the usable page width, the type scale and spacing tokens live in `base.css`, and the component styles define consistent buttons, cards, split layouts, testimonials, accordions, forms, and conversion sections. The responsive stylesheet is organized around mobile, large mobile, tablet, small desktop, and desktop behavior so layouts recompose instead of simply shrinking.
+
 ## Entry points
 
 - `index.html` — primary landing page
