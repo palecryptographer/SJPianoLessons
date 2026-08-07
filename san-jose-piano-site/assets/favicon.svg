@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" role="img" aria-label="Piano keys">
+  <rect width="64" height="48" rx="8" fill="#25231f"/>
+  <path d="M8 8h8v27H8zM24 8h8v27h-8zM40 8h8v27h-8zM56 8h1v27h-1z" fill="#f7f2e9"/>
+  <path d="M16 8h8v18h-8zM32 8h8v18h-8zM48 8h8v18h-8z" fill="#a58b59"/>
+</svg>

@@ -1,0 +1,7 @@
+# Local archive of captured legacy pages and temporary scrape output.
+/.legacy/
+
+# Local/editor noise.
+.DS_Store
+*.swp
+*.swo

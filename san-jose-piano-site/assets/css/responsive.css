@@ -1,0 +1,211 @@
+/* Responsive rules for the five supported viewport classes. */
+
+@media (max-width: 1120px) and (min-width: 1001px) {
+  .navin {
+    gap: 14px;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .navlinks {
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .phone {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .navin > .btn {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .navlinks,
+  .phone {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .hero {
+    background: #faf6ef;
+  }
+
+  .hero-grid,
+  .split,
+  .teacher,
+  .online-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    min-height: 0;
+  }
+
+  .hero-copy {
+    padding: 62px 0 30px;
+  }
+
+  .hero-art {
+    min-height: 0;
+    padding: 10px 0 55px;
+  }
+
+  .feature-image {
+    height: 360px;
+  }
+
+  .stats,
+  .grid4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .styles {
+    grid-template-columns: 1fr;
+  }
+
+  .footgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    width: min(100% - 28px, var(--max));
+  }
+
+  .navin {
+    gap: 12px;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .navin > .btn {
+    padding: 11px 12px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  section {
+    padding: 68px 0;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .section-title h2,
+  .split h2,
+  .teacher h2,
+  .online-panel h2,
+  .cta-box h2 {
+    font-size: 36px;
+  }
+
+  .stats,
+  .grid4,
+  .testimonial-grid,
+  .video-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    padding: 14px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stat:last-child {
+    border-bottom: 0;
+  }
+
+  .gallery-preview {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-preview img,
+  .gallery-preview img:first-child {
+    height: 170px;
+    grid-row: auto;
+  }
+
+  .gallery-preview img:first-child {
+    height: 240px;
+    grid-column: 1 / -1;
+  }
+
+  .feature-image {
+    height: 280px;
+  }
+
+  .online-panel,
+  .cta-box {
+    padding: 26px;
+  }
+
+  .field.wide {
+    grid-column: auto;
+  }
+
+  .schedule-frame {
+    min-height: 720px;
+  }
+}
+
+@media (max-width: 390px) {
+  .navin {
+    gap: 8px;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.12;
+  }
+
+  .brand > span:last-child {
+    max-width: 84px;
+  }
+
+  .mark {
+    width: 32px;
+    height: 25px;
+  }
+
+  .mark span:nth-child(1),
+  .mark span:nth-child(3),
+  .mark span:nth-child(5) {
+    height: 25px;
+  }
+
+  .mark span:nth-child(2),
+  .mark span:nth-child(4),
+  .mark span:nth-child(6) {
+    height: 16px;
+  }
+
+  .navin > .btn {
+    padding: 10px 11px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .menu summary {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
