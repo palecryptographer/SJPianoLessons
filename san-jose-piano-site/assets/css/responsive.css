@@ -7,26 +7,28 @@
 
   .brand {
     gap: 9px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .brand > span:last-child {
-    max-width: 150px;
+    max-width: 140px;
   }
 
   .navlinks {
-    gap: 14px;
-    font-size: 14px;
+    gap: 13px;
+    font-size: 13px;
   }
 
   .phone {
-    padding: 10px 11px;
-    font-size: 14px;
+    padding: 9px 10px;
+    font-size: 13px;
   }
 
   .navin > .btn {
-    padding: 13px 16px;
-    font-size: 14px;
+    min-height: 50px;
+    padding: 11px 12px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 }
 
@@ -265,6 +267,10 @@
     margin-bottom: 18px;
   }
 
+  .section-title--styles p {
+    margin-top: 0;
+  }
+
   .section-title h2,
   .split h2,
   .cta-box h2,
@@ -272,6 +278,7 @@
   .online-panel h2,
   .areas-panel h2 {
     font-size: 42px;
+    line-height: var(--leading-heading);
   }
 
   .benefits-title h2,
@@ -360,10 +367,12 @@
   .faq summary {
     padding-right: 42px;
     font-size: 21px;
+    line-height: var(--leading-subheading);
   }
 
   .faq p {
     font-size: 17px;
+    line-height: var(--leading-body);
   }
 
   .performance-media .feature-image {
