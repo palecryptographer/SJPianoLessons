@@ -5,3 +5,5 @@
 .DS_Store
 *.swp
 *.swo
+/.playwright-cli/
+/output/playwright/
