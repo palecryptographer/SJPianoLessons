@@ -72,11 +72,6 @@
 }
 
 .menu summary {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
   min-height: 46px;
   padding: 10px 14px;
   border: 1px solid var(--line);
@@ -95,26 +90,9 @@
   display: none;
 }
 
-.menu summary::after {
-  display: grid;
-  width: 18px;
-  height: 18px;
-  place-items: center;
-  color: var(--gold);
-  content: "+";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1;
-  transition: transform var(--motion-duration-fast) var(--motion-ease);
-}
-
 .menu[open] summary {
   border-color: var(--gold);
   background: var(--cream);
-}
-
-.menu[open] summary::after {
-  transform: rotate(45deg);
 }
 
 .menu-links {
@@ -129,6 +107,16 @@
   border-radius: var(--radius);
   background: white;
   box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(var(--motion-distance-sm));
+  transition:
+    opacity var(--motion-duration-fast) var(--motion-ease),
+    transform var(--motion-duration-fast) var(--motion-ease);
+}
+
+.menu[open] .menu-links {
+  opacity: 1;
+  transform: none;
 }
 
 .menu-links a {
@@ -700,6 +688,29 @@
   line-height: var(--leading-body);
 }
 
+.faq details > p {
+  opacity: 0;
+  transform: translateY(var(--motion-distance-sm));
+  transition:
+    opacity var(--motion-duration-fast) var(--motion-ease),
+    transform var(--motion-duration-fast) var(--motion-ease);
+}
+
+.faq details[open] > p {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @starting-style {
+    .menu[open] .menu-links,
+    .faq details[open] > p {
+      opacity: 0;
+      transform: translateY(var(--motion-distance-sm));
+    }
+  }
+}
+
 .cta {
   padding: clamp(88px, 8vw, 128px) 0;
   background: var(--cream-deep);
@@ -1257,12 +1268,14 @@ dialog img {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .menu[open] summary::after {
+  .menu-links,
+  .menu[open] .menu-links,
+  .faq details > p,
+  .faq details[open] > p {
+    opacity: 1;
     transform: none;
-  }
-
-  .faq details[open] summary::after {
-    transform: translateY(-50%);
+    transition: none !important;
+    animation: none !important;
   }
 
   dialog,

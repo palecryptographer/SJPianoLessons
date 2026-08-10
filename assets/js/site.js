@@ -1,8 +1,6 @@
 (() => {
   const revealSelector = [
     ".page-hero",
-    ".hero-copy",
-    ".hero-art",
     ".section-title",
     ".split",
     ".teacher",
@@ -13,9 +11,6 @@
     ".gallery-grid",
     ".video-grid",
     ".testimonial-grid",
-    ".booking-shell",
-    ".prose",
-    ".cta-box",
   ].join(",");
 
   function initMotion() {
@@ -34,15 +29,26 @@
     }
 
     let observer = null;
+    let reductionApplied = motionPreference.matches;
 
     const revealAll = () => {
-      if (observer) observer.disconnect();
+      if (observer && root.classList.contains("motion-ready")) {
+        observer.disconnect();
+      }
       root.classList.remove("motion-ready");
-      targets.forEach((target) => target.classList.add("motion-visible"));
+      targets.forEach((target) => {
+        if (!target.classList.contains("motion-visible")) {
+          target.classList.add("motion-visible");
+        }
+      });
     };
 
     const enableMotion = () => {
       if (motionPreference.matches) {
+        reductionApplied = true;
+      }
+
+      if (reductionApplied) {
         revealAll();
         return;
       }
@@ -62,28 +68,28 @@
         }
 
         targets.forEach((target) => {
-          target.classList.remove("motion-visible");
           target.classList.add("motion-reveal");
         });
         root.classList.add("motion-ready");
-        targets.forEach((target) => observer.observe(target));
+        targets
+          .filter((target) => !target.classList.contains("motion-visible"))
+          .forEach((target) => observer.observe(target));
       } catch {
         revealAll();
       }
     };
 
     targets
-      .filter((target) => target.matches(".page-hero, .hero-copy, .hero-art"))
+      .filter((target) => target.matches(".page-hero"))
       .forEach((target) => target.classList.add("motion-reveal--large"));
 
     enableMotion();
 
     const handlePreferenceChange = () => {
       if (motionPreference.matches) {
-        revealAll();
-      } else {
-        enableMotion();
+        reductionApplied = true;
       }
+      enableMotion();
     };
 
     if (typeof motionPreference.addEventListener === "function") {
