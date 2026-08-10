@@ -473,6 +473,11 @@
 }
 
 @media (max-width: 400px) {
+  .schedule-frame {
+    height: 2500px;
+    min-height: 0;
+  }
+
   .areas {
     grid-template-columns: 1fr;
   }
