@@ -6,4 +6,5 @@
 *.swp
 *.swo
 /.playwright-cli/
+/screenshots/
 /output/playwright/

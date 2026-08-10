@@ -92,7 +92,12 @@
     gap: 42px;
   }
 
-  .teacher img,
+  .teacher img {
+    width: min(100%, 448px);
+    max-height: none;
+    justify-self: center;
+  }
+
   .areas-panel img {
     max-height: 560px;
   }
