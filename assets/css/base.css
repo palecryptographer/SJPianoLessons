@@ -34,6 +34,13 @@
   --radius-lg: 26px;
   --shadow: 0 20px 56px rgba(41, 32, 21, 0.11);
   --shadow-soft: 0 8px 24px rgba(40, 30, 20, 0.065);
+  --motion-duration-fast: 140ms;
+  --motion-duration-base: 200ms;
+  --motion-duration-slow: 280ms;
+  --motion-ease: cubic-bezier(0.22, 0.8, 0.28, 1);
+  --motion-distance-sm: 4px;
+  --motion-distance-md: 8px;
+  --motion-distance-lg: 12px;
 }
 
 * {
@@ -129,4 +136,19 @@ p {
 
 .eyebrow.inverse {
   color: #d8bd87;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
 }

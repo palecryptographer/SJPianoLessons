@@ -72,8 +72,12 @@
 .navlinks a,
 .phone {
   transition:
-    color 0.2s ease,
-    border-color 0.2s ease;
+    color var(--motion-duration-base) var(--motion-ease),
+    border-color var(--motion-duration-base) var(--motion-ease);
+}
+
+.footer a {
+  transition: color var(--motion-duration-base) var(--motion-ease);
 }
 
 .navlinks a:hover,
@@ -278,6 +282,28 @@ section {
   padding: var(--section-space) 0;
 }
 
+.motion-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-ready .motion-reveal {
+  opacity: 0;
+  transform: translateY(var(--motion-distance-md));
+  transition:
+    opacity var(--motion-duration-slow) var(--motion-ease),
+    transform var(--motion-duration-slow) var(--motion-ease);
+}
+
+.motion-ready .motion-reveal--large {
+  transform: translateY(var(--motion-distance-lg));
+}
+
+.motion-ready .motion-reveal.motion-visible {
+  opacity: 1;
+  transform: none;
+}
+
 .tinted {
   background: var(--cream);
 }
@@ -385,4 +411,13 @@ section {
 .prose {
   max-width: 940px;
   margin: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready .motion-reveal,
+  .motion-ready .motion-reveal.motion-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
