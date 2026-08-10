@@ -92,19 +92,26 @@
     gap: 42px;
   }
 
+  .feature-image {
+    width: min(100%, 680px);
+    justify-self: center;
+  }
+
   .teacher img {
     width: min(100%, 448px);
     max-height: none;
     justify-self: center;
   }
 
-  .areas-panel img {
-    max-height: 560px;
+  .areas-photo {
+    height: 480px;
+    min-height: 0;
   }
 
   .areas-panel img {
-    height: 480px;
-    min-height: 0;
+    height: 100%;
+    max-height: none;
+    border-radius: var(--radius-lg);
   }
 
   .areas-panel {
@@ -122,6 +129,16 @@
 
   .video-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .styles {
+    grid-template-columns: 1fr;
+  }
+
+  .style-head,
+  .style-card--jazz .style-head,
+  .style-card--pop .style-head {
+    min-height: clamp(320px, 45vw, 420px);
   }
 
   .footgrid {
@@ -306,7 +323,8 @@
   }
 
   .feature-image {
-    height: 330px;
+    height: auto;
+    aspect-ratio: 5 / 4;
   }
 
   .style-head {
@@ -354,9 +372,10 @@
     grid-template-columns: 1fr;
   }
 
-  .areas-panel img {
-    height: 320px;
+  .areas-photo {
+    height: auto;
     min-height: 0;
+    aspect-ratio: 3 / 2;
   }
 
   .areas {
