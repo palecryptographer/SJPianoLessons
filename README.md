@@ -31,4 +31,6 @@ the form begins delivering inquiries.
 
 Publish the `main` branch from `/(root)` in **Settings → Pages**. This is a plain static site, so no build command or custom GitHub Actions workflow is required. The active site and shared assets live directly at the repository root, while compatibility pages redirect older URLs to their current destinations. `.nojekyll` keeps GitHub Pages from processing the files with Jekyll.
 
-The production custom domain is `sanjosepianolessons.net`. Configure it in GitHub Pages before replacing the current Weebly DNS records. Preserve the domain's existing email-related MX and TXT records during the DNS cutover.
+The site is currently published at `https://palecryptographer.github.io/SJPianoLessons/`. Keep the GitHub Pages custom-domain setting empty until the DNS cutover is ready; adding a `CNAME` file before then makes this URL redirect to the existing Weebly site.
+
+The planned production custom domain is `sanjosepianolessons.net`. When it is time to switch, first replace the current Weebly web records with the GitHub Pages DNS records, then configure the custom domain in GitHub Pages. Preserve the domain's existing email-related MX and TXT records during the DNS cutover.
